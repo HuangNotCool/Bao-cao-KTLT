@@ -38,7 +38,7 @@ void hienThiNhatKy() {
     FILE* flog = fopen(LOG_FILE, "r");
 
     if (!flog) {
-        printf("⚠️ Khong tim thay nhat ky.\n");
+        printf(" Khong tim thay nhat ky.\n");
         return;
     }
 
@@ -53,36 +53,51 @@ void hienThiNhatKy() {
     }
 
     if (empty) {
-        printf("📭 Chua co log de hien thi.\n");
+        printf(" Chua co log de hien thi.\n");
     }
 
     fclose(flog);
 }
 
 void quanLyHeThong() {
+    clearBuffer();
     int chon;
+    char buffer[100];
 
-    do {
-        printf("\n=== Thao tac he thong ===\n");
+    while (1) {
+        printf("=== Thao tac he thong ===\n");
         printf("1. Reset du lieu\n");
         printf("2. Hien thi nhat ky he thong\n");
         printf("0. Quay lai menu chinh\n");
         printf("Chon: ");
-        scanf("%d", &chon);
-        while (getchar() != '\n');
 
-        switch (chon) {
-            case 1:
-                resetDuLieu();
-                break;
-            case 2:
-                hienThiNhatKy();
-                break;
-            case 0:
-                break;
-            default:
-                printf("❌ Lua chon khong hop le. Xin nhap lai.\n");
+        if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+            printf("Loi khi doc du lieu. Vui long thu lai.\n");
+            continue;
         }
 
-    } while (chon != 0 && !resetFlag);
+        int temp;
+        char r;
+        int success = sscanf(buffer, "%d %c", &temp, &r);
+
+        if (success == 1 && temp >= 0 && temp <= 2) {
+            chon = temp;
+            break;  // ra khỏi vòng lặp và xử lý bên ngoài
+        } else {
+            printf(" Lua chon khong hop le. Xin nhap lai.\n");
+        }
+    }
+
+    // Xử lý chức năng sau khi đã có lựa chọn hợp lệ
+    switch (chon) {
+        case 1:
+            resetDuLieu();
+            break;
+        case 2:
+            hienThiNhatKy();
+            break;
+        case 0:
+            return;
+    }
 }
+

@@ -1,0 +1,9 @@
+[Log] Thuc hien chuc nang 1: In bang sai phan
+[Log] Ket thuc bang sai phan.
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+

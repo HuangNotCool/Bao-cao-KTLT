@@ -7,6 +7,10 @@ int n;
 double x[MAX], y[MAX];
 int precision;
 
+void clearBuffer() {
+    while (getchar() != '\n');
+}
+
 // Kiểm tra x[] có cách đều không
 int kiemTraCachDeu() {
     double d = x[1] - x[0];
@@ -27,24 +31,55 @@ int kiemTraTrung() {
 }
 
 void nhapDuLieu() {
-    do {
-        printf("Nhap so diem noi suy (n > 1): ");
-        scanf("%d", &n);
-        if (n < 2)
-            printf("❌ So diem phai > 1. Xin nhap lai!\n");
-    } while (n < 2);
+   void clearBuffer() {
+    while (getchar() != '\n');
+}
+while (1) {
+    int temp;
+    char c;
+    printf("Nhap so diem noi suy (n > 1): ");
+    if (scanf("%d%c", &temp, &c) != 2 || c != '\n') {
+        printf("Du lieu khong hop le. Xin nhap vao so nguyen.\n");
+        clearBuffer();
+        continue;
+    }
+
+    if (temp < 2) {
+        printf("Gia tri khong hop le.\n");
+    } else {
+        n = temp;
+        break;
+    }
+}
 
     printf("\nNhap cac gia tri x y tuong ung:\n");
     for (int i = 0; i < n; i++) {
+    // Nhập x[i]
+    while (1) {
         printf("x[%d] = ", i);
-        scanf("%lf", &x[i]);
-        printf("y[%d] = ", i);
-        scanf("%lf", &y[i]);
+        if (scanf("%lf", &x[i]) == 1) {
+            break;
+        } else {
+            printf("Gia tri khong hop le. Xin hay nhap so thuc.\n", i);
+            clearBuffer();
+        }
     }
+
+    // Nhập y[i]
+    while (1) {
+        printf("y[%d] = ", i);
+        if (scanf("%lf", &y[i]) == 1) {
+            break;
+        } else {
+            printf("Gia tri khong hop le. Xin hay nhap so thuc.\n", i);
+            clearBuffer();
+        }
+    }
+}
 
     // Kiểm tra x[] không trùng
     while (kiemTraTrung()) {
-        printf("\n❌ Cac gia tri x khong duoc trung nhau. Xin nhap lai tu dau:\n");
+        printf("\nCac gia tri x khong duoc trung nhau. Xin nhap lai tu dau:\n");
         for (int i = 0; i < n; i++) {
             printf("x[%d] = ", i);
             scanf("%lf", &x[i]);
@@ -55,7 +90,7 @@ void nhapDuLieu() {
 
     // Kiểm tra x[] cách đều
     while (!kiemTraCachDeu()) {
-        printf("\n❌Cac gia tri x phai cach deu nhau. Xin nhap lai tu dau:\n");
+        printf("\nCac gia tri x phai cach deu nhau. Xin nhap lai tu dau:\n");
         for (int i = 0; i < n; i++) {
             printf("x[%d] = ", i);
             scanf("%lf", &x[i]);
@@ -64,10 +99,22 @@ void nhapDuLieu() {
         }
     }
 
-    do {
-        printf("\nNhap vao so chu so thap phan muon hien thi (0 den 15): ");
-        scanf("%d", &precision);
-        if (precision < 0 || precision > 15)
-            printf("❌ Gia tri khong hop le.\n");
-    } while (precision < 0 || precision > 15);
+  while (1) {
+    printf("\nNhap so chu so thap phan hien thi (0 den 15): ");
+    int temp;
+    char c;
+    if (scanf("%d%c", &temp, &c) != 2 || c != '\n') {
+        printf("Du lieu khong hop le. Xin nhap vao so nguyen.\n");
+        clearBuffer();
+        continue;
+    }
+
+    if (temp < 0 || temp > 15) {
+        printf("Gia tri khong hop le.\n");
+    } else {
+        precision = temp;
+        break;
+    }
+}
+
 }

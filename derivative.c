@@ -11,6 +11,7 @@
 
 extern double heSoChinhTac[MAX];  // Được tạo trong poly.c
 
+
 // Tính đạo hàm của đa thức chính tắc tại x0
 double daoHamTai(double x0) {
     double result = 0;
@@ -21,6 +22,7 @@ double daoHamTai(double x0) {
 }
 
 void daoHamTaiMotDiem() {
+	clearBuffer();
     double x0;
     char fmt[10];
     sprintf(fmt, "%%.%dlf", precision);
@@ -43,9 +45,22 @@ void daoHamTaiMotDiem() {
     }
 
     printf("\n=== Tinh gan dung dao ham cap 1 tai mot diem ===\n");
+    char buffer[100];
+	while (1) {
     printf("Nhap gia tri x can tinh dao ham: ");
-    scanf("%lf", &x0);
-    while (getchar() != '\n');
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+        printf("Gia tri khong hop le. Xin nhap lai.\n");
+        continue;
+    }
+
+    char extra;
+    if (sscanf(buffer, "%lf %c", &x0, &extra) == 1) {
+        break;  // nhập đúng 1 số double, không dư gì → OK
+    } else {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
+    }
+}
+
 
     double f1 = daoHamTai(x0);
 
@@ -73,6 +88,7 @@ void daoHamTaiMotDiem() {
 }
 
 void daoHamTaiCacMoc() {
+	clearBuffer();
     int chon;
     double h = x[1] - x[0];
     char fmt[10];
@@ -87,22 +103,33 @@ void daoHamTaiCacMoc() {
     printf("2. Dao ham lui\n");
     printf("3. Trung tam\n");
     printf("0. Quay lai menu chinh\n");
+    char buffer[100];
+	while (1) {
     printf("Chon: ");
-    scanf("%d", &chon);
-    while (getchar() != '\n');
-
-    if (chon < 0 || chon > 3) {
-        printf("❌ Lua chon khong hop le.\n");
-        fclose(fout);
-        fclose(flog);
-        return;
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
+        continue;
     }
 
-    if (chon == 0) {
-        fclose(fout);
-        fclose(flog);
-        return;
+    int temp;
+    char r;
+    int success = sscanf(buffer, "%d %c", &temp, &r);
+
+    if (success == 1 && temp >= 0 && temp <= 3) {
+        chon = temp;
+        break;
+    } else {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
     }
+}
+	if (chon == 0) {
+    printf("Quay lai menu chinh...\n");
+    fprintf(flog, "[Log] Quay lai menu chinh( Khong thuc hien tinh toan).\n\n");
+    fclose(fout);
+    fclose(flog);
+    return;
+}
+
 
     fprintf(flog, "[Log] Gan dung dao ham tai cac moc, loai %d\n", chon);
 

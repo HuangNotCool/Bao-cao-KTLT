@@ -20,7 +20,7 @@ void doiNhapEnter() {
 // Hiển thị menu chính
 void hienThiMenu() {
     printf("\n================ MENU ================\n");
-    printf("1. Tn bang sai phan\n");
+    printf("1. In bang sai phan\n");
     printf("2. In da thuc noi suy Newton dang chinh tac\n");
     printf("3. Tinh gia tri tai 1 diem bang so do HOOCNE\n");
     printf("4. Tinh gan dung dao ham tai mot diem\n");
@@ -75,7 +75,7 @@ int main() {
                 printf("Da thoat chuong trinh.\n");
                 break;
             default:
-                printf("❌ Lua chon khong hop le. Xin thu lai!\n");
+                printf("Lua chon khong hop le. Xin nhap lai!\n");
                 doiNhapEnter();
         }
 

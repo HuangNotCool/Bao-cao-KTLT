@@ -34,16 +34,39 @@ void tinhGiaTriHoocne() {
     tinhSaiPhanLocal();
 
     printf("\n=== Tinh gia tri tai 1 diem bang so do HOOCNE ===\n");
+    while (1) {
     printf("Nhap gia tri x can noi suy: ");
-    scanf("%lf", &x0);
-    while (getchar() != '\n'); // xóa buffer
-
+    if (scanf("%lf", &x0) == 1) {
+        clearBuffer();
+        break;
+    }
+    printf("Du lieu khong hop le. Xin nhap lai.\n");
+    clearBuffer();
+}
+	char buffer[100];
+while (1) {
     printf("Chon phuong phap tinh:\n");
     printf("1. Newton tien\n");
     printf("2. Newton lui\n");
+
     printf("Chon: ");
-    scanf("%d", &chon);
-    while (getchar() != '\n');
+    if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
+        continue;
+    }
+
+    int temp;
+    char r;
+    int success = sscanf(buffer, "%d %c", &temp, &r);
+
+    if (success == 1 && (temp == 1 || temp == 2)) {
+        chon = temp;
+        break;
+    } else {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
+    }
+}
+
 
     fprintf(flog, "[Log] Tinh gia tri tai x = %.5lf bang so do HOOCNE (%s)\n",
             x0, (chon == 1) ? "tien" : "lui");

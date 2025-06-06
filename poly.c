@@ -3,6 +3,7 @@
 #include <string.h>
 #include "input.h"
 #include "poly.h"
+#include <math.h>
 
 #define MAX_BAC 100
 #define LOG_FILE "nhatkyhethong.txt"
@@ -119,33 +120,42 @@ void inDaThucNewton() {
             ytable_local[i][j] = ytable_local[i][j - 1] - ytable_local[i - 1][j - 1];
 
     do {
-        printf("\n=== In da thuc noi suy Newton ===\n");
-        printf("1. In da thuc Newton tien\n");
-        printf("2. In da thuc Newton lui\n");
-        printf("0. Quay lai menu chinh\n");
-        printf("Chon: ");
-        scanf("%d", &chon);
-        while (getchar() != '\n'); // clear buffer
+    printf("\n=== In da thuc noi suy Newton ===\n");
+    printf("1. In da thuc Newton tien\n");
+    printf("2. In da thuc Newton lui \n");
+    printf("0. Quay lai Menu chinh\n");
 
-        if (chon == 1 || chon == 2) {
-            double heso[MAX];
-            if (chon == 1) {
-                fprintf(flog, "[Log] In da thuc Newton tien\n");
-                layHeSoTien(heso);
-                taoDaThucChinhTac(heso, 1);
-            } else {
-                fprintf(flog, "[Log] In da thuc Newton lui\n");
-                layHeSoLui(heso);
-                taoDaThucChinhTac(heso, 0);
-            }
+    int temp;
+    char c;
 
-            inDaThucRa(fout);
-            fprintf(flog, "[Log] Ket thuc chuc nang in da thuc\n\n");
-        } else if (chon != 0) {
-            printf("❌ Lua chon khong hop le. Xin nhap lai!\n");
+    printf("Chon: ");
+    if (scanf("%d%c", &temp, &c) != 2 || c != '\n') {
+        printf("Lua chon khong hop le. Xin nhap lai.\n");
+        clearBuffer();
+        continue;
+    }
+
+    if (temp == 1 || temp == 2) {
+        double heso[MAX];
+        if (temp == 1) {
+            fprintf(flog, "[Log] In da thuc Newton tien\n");
+            layHeSoTien(heso);
+            taoDaThucChinhTac(heso, 1);
+        } else {
+            fprintf(flog, "[Log] In da thuc Newton lui\n");
+            layHeSoLui(heso);
+            taoDaThucChinhTac(heso, 0);
         }
 
-    } while (chon != 0);
+        inDaThucRa(fout);
+        fprintf(flog, "[Log] Ket thuc chuc nang in da thuc\n\n");
+    } else if (temp == 0) {
+        break;
+    } else {
+        printf("Gia tri khong hop le.\n");
+    }
+
+} while (1);
 
     fclose(fout);
     fclose(flog);
