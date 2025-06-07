@@ -26,7 +26,7 @@ void tinhSaiPhanLocal() {
 }
 
 void tinhGiaTriHoocne() {
-    double x0;
+	double x0;
     int chon;
     FILE* fout = fopen(OUTPUT_FILE, "a");
     FILE* flog = fopen(LOG_FILE, "a");
@@ -84,8 +84,10 @@ while (1) {
         double h = x[1] - x[0];
         double t = (x0 - x[0]) / h;
         double q = ytable_local[0][n - 1];
-
-        printf("b[%d] = %.10lf\n", n - 1, q);
+        
+        printf("b[%d] = ", n - 1);
+		printf(fmt, q);
+		printf("\n");
         fprintf(fout, "b[%d] = %.10lf\n", n - 1, q);
 
         for (int i = n - 2; i >= 0; i--) {
@@ -93,7 +95,13 @@ while (1) {
 
             printf("b[%d] = y[0][%d] + (t - %d) * b[%d] = ", i, i, i, i + 1);
             printf(fmt, ytable_local[0][i]);
-            printf(" + (%.4lf - %d) * %.10lf = %.10lf\n", t, i, q - ytable_local[0][i], q);
+            printf(" + (");
+			printf(fmt, t);
+			printf(" - %d) * ", i);
+			printf(fmt, q - ytable_local[0][i]);
+			printf(" = ");
+			printf(fmt, q);
+			printf("\n");
 
             fprintf(fout, "b[%d] = y[0][%d] + (t - %d) * b[%d] = ", i, i, i, i + 1);
             fprintf(fout, fmt, ytable_local[0][i]);
@@ -106,8 +114,10 @@ while (1) {
         double h = x[1] - x[0];
         double t = (x0 - x[n - 1]) / h;
         double q = ytable_local[n - 1][n - 1];
-
-        printf("b[%d] = %.10lf\n", n - 1, q);
+        
+        printf("b[%d] = ", n - 1);
+		printf(fmt, q);
+		printf("\n");
         fprintf(fout, "b[%d] = %.10lf\n", n - 1, q);
 
                for (int i = n - 2; i >= 0; i--) {
@@ -115,7 +125,13 @@ while (1) {
 
             printf("b[%d] = y[%d][%d] + (t + %d - %d) * b[%d] = ", i, n - 1, i, i, n - 1, i + 1);
             printf(fmt, ytable_local[n - 1][i]);
-            printf(" + (%.4lf) * %.10lf = %.10lf\n", t + i - (n - 1), q - ytable_local[n - 1][i], q);
+            printf(" + ");
+			printf(fmt, t + i - (n - 1));
+			printf(" * ");
+			printf(fmt, q - ytable_local[n - 1][i]);
+			printf(" = ");
+			printf(fmt, q);
+			printf("\n");
 
             fprintf(fout, "b[%d] = y[%d][%d] + (t + %d - %d) * b[%d] = ", i, n - 1, i, i, n - 1, i + 1);
             fprintf(fout, fmt, ytable_local[n - 1][i]);
@@ -126,8 +142,10 @@ while (1) {
     }
 
     // In kết luận
-    printf("\nKet luan: P(%.5lf) = ", x0);
-    printf(fmt, p);
+    printf("\nKet luan: P(");
+	printf(fmt, x0);
+	printf(") = ");
+	printf(fmt, p);
     printf("\n");
 
     fprintf(fout, "\nKet luan: P(%.5lf) = ", x0);

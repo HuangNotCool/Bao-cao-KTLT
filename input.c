@@ -8,7 +8,8 @@ double x[MAX], y[MAX];
 int precision;
 
 void clearBuffer() {
-    while (getchar() != '\n');
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // Kiểm tra x[] có cách đều không

@@ -22,28 +22,25 @@ double daoHamTai(double x0) {
 }
 
 void daoHamTaiMotDiem() {
-	clearBuffer();
+	// clearBuffer();
     double x0;
     char fmt[10];
     sprintf(fmt, "%%.%dlf", precision);
-
+    
     FILE* fout = fopen(OUTPUT_FILE, "a");
     FILE* flog = fopen(LOG_FILE, "a");
 
-    // Cảnh báo nếu đa thức chưa được tính
     int isEmpty = 1;
     for (int i = 0; i < n; i++)
         if (fabs(heSoChinhTac[i]) > 1e-10)
             isEmpty = 0;
-
     if (isEmpty) {
-        printf("❗ Hay tao da thuc noi suy truoc khi tinh.\n");
+        printf("Hay tao da thuc noi suy truoc khi tinh.\n");
         fprintf(flog, "[Log] Loi: Chua co da thuc noi suy de tinh dao ham\n\n");
         fclose(fout);
         fclose(flog);
         return;
     }
-
     printf("\n=== Tinh gan dung dao ham cap 1 tai mot diem ===\n");
     char buffer[100];
 	while (1) {
@@ -88,7 +85,7 @@ void daoHamTaiMotDiem() {
 }
 
 void daoHamTaiCacMoc() {
-	clearBuffer();
+	// clearBuffer();
     int chon;
     double h = x[1] - x[0];
     char fmt[10];

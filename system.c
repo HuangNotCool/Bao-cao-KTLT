@@ -60,7 +60,7 @@ void hienThiNhatKy() {
 }
 
 void quanLyHeThong() {
-    clearBuffer();
+    // clearBuffer();
     int chon;
     char buffer[100];
 

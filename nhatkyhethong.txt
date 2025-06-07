@@ -7,3 +7,55 @@
 [Log] In da thuc Newton lui
 [Log] Ket thuc chuc nang in da thuc
 
+[Log] Tinh gia tri tai x = 1.00000 bang so do HOOCNE (tien)
+[Log] Da thuc hien tinh P(1.00000) = 3.20
+
+[Log] Thuc hien chuc nang 1: In bang sai phan
+[Log] Ket thuc bang sai phan.
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Tinh gia tri tai x = 2.30000 bang so do HOOCNE (tien)
+[Log] Da thuc hien tinh P(2.30000) = 5.85
+
+[Log] Tinh gia tri tai x = 2.40000 bang so do HOOCNE (lui)
+[Log] Da thuc hien tinh P(2.40000) = 1.17
+
+[Log] Quay lai menu chinh( Khong thuc hien tinh toan).
+
+[Log] Tinh dao ham tai x = 3.00, Ket qua: 3.25
+
+[Log] Tinh dao ham tai x = 2.40, Ket qua: 2.89
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 2
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 3
+[Log] Tinh dao ham tai 1 diem thanh cong.
+
+[Log] Quay lai menu chinh( Khong thuc hien tinh toan).
+
+[Log] Thuc hien chuc nang 1: In bang sai phan
+[Log] Ket thuc bang sai phan.
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Tinh gia tri tai x = 3.00000 bang so do HOOCNE (tien)
+[Log] Da thuc hien tinh P(3.00000) = 4.00
+
+[Log] Tinh dao ham tai x = 2.00, Ket qua: 2.00
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
