@@ -8,12 +8,13 @@
 #define LOG_FILE "nhatkyhethong.txt"
 #define OUTPUT_FILE "output.txt"
 
-double ytable[MAX][MAX]; // Bảng sai phân (copy từ y[])
+double ytable_tien[MAX][MAX];
+double ytable_lui[MAX][MAX];
 
 void tinhSaiPhanTien(int n) {
     for (int j = 1; j < n; j++) {
         for (int i = 0; i < n - j; i++) {
-            ytable[i][j] = ytable[i + 1][j - 1] - ytable[i][j - 1];
+            ytable_tien[i][j] = ytable_tien[i + 1][j - 1] - ytable_tien[i][j - 1];
         }
     }
 }
@@ -21,7 +22,7 @@ void tinhSaiPhanTien(int n) {
 void tinhSaiPhanLui(int n) {
     for (int j = 1; j < n; j++) {
         for (int i = n - 1; i >= j; i--) {
-            ytable[i][j] = ytable[i][j - 1] - ytable[i - 1][j - 1];
+            ytable_lui[i][j] = ytable_lui[i][j - 1] - ytable_lui[i - 1][j - 1];
         }
     }
 }
@@ -39,9 +40,9 @@ void inBangSaiPhan(FILE* fout) {
 
         for (int j = 0; j < n - i; j++) {
             printf("  ");
-            printf(fmt, ytable[i][j]);
+            printf(fmt, ytable_tien[i][j]);
             fprintf(fout, "  ");
-            fprintf(fout, fmt, ytable[i][j]);
+            fprintf(fout, fmt, ytable_tien[i][j]);
         }
         printf("\n");
         fprintf(fout, "\n");
@@ -56,9 +57,9 @@ void inBangSaiPhan(FILE* fout) {
 
         for (int j = 0; j <= i; j++) {
             printf("  ");
-            printf(fmt, ytable[i][j]);
+            printf(fmt, ytable_lui[i][j]);
             fprintf(fout, "  ");
-            fprintf(fout, fmt, ytable[i][j]);
+            fprintf(fout, fmt, ytable_lui[i][j]);
         }
         printf("\n");
         fprintf(fout, "\n");
@@ -68,11 +69,11 @@ void inBangSaiPhan(FILE* fout) {
 void tinhBangSaiPhan() {
     FILE* fout = fopen(OUTPUT_FILE, "a");
     FILE* flog = fopen(LOG_FILE, "a");
-
-    // Copy y[] vào ytable[i][0]
+    
     for (int i = 0; i < n; i++) {
-        ytable[i][0] = y[i];
-    }
+    ytable_tien[i][0] = y[i];
+    ytable_lui[i][0] = y[i];
+}
 
     tinhSaiPhanTien(n);
     tinhSaiPhanLui(n);
