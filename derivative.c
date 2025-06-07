@@ -96,9 +96,9 @@ void daoHamTaiCacMoc() {
 
     printf("\n=== Tinh gan dung dao ham tai cac muc noi suy theo cong thuc 3 diem ===\n");
     printf("Chon cong thuc tinh:\n");
-    printf("1. Dao ham tien\n");
-    printf("2. Dao ham lui\n");
-    printf("3. Trung tam\n");
+    printf("1. Cong thuc can trai\n");
+    printf("2. Cong thuc can phai\n");
+    printf("3. Cong thuc trung tam\n");
     printf("0. Quay lai menu chinh\n");
     char buffer[100];
 	while (1) {

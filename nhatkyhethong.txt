@@ -59,3 +59,81 @@
 [Log] Gan dung dao ham tai cac moc, loai 1
 [Log] Tinh dao ham tai 2 diem thanh cong.
 
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Thuc hien chuc nang 1: In bang sai phan
+[Log] Ket thuc bang sai phan.
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Tinh gia tri tai x = 2.30000 bang so do HOOCNE (tien)
+[Log] Da thuc hien tinh P(2.30000) = 7.76
+
+[Log] Tinh gia tri tai x = 2.40000 bang so do HOOCNE (lui)
+[Log] Da thuc hien tinh P(2.40000) = -3.42
+
+[Log] Tinh dao ham tai x = 3.40, Ket qua: -3.93
+
+[Log] Tinh dao ham tai x = 2.30, Ket qua: 0.25
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 2
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 3
+[Log] Tinh dao ham tai 1 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 4 diem thanh cong.
+
+[Log] Loi: Chua co da thuc noi suy de tinh dao ham
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 4 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 2
+[Log] Tinh dao ham tai 4 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 3
+[Log] Tinh dao ham tai 3 diem thanh cong.
+
