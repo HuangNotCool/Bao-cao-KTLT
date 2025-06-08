@@ -3,7 +3,6 @@
 #include "input.h"
 #include "menu.h"
 
-// Khai báo các module chức năng
 void tinhBangSaiPhan();
 void inDaThucNewton();
 void tinhGiaTriHoocne();
@@ -36,7 +35,7 @@ void hienThiMenu() {
 void chayMenu() {
     int luaChon;
     char buffer[100];
-    nhapDuLieu(); // Gọi nhập dữ liệu đầu vào 1 lần
+    nhapDuLieu();
 
     do {
         system("cls");

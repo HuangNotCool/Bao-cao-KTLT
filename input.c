@@ -12,7 +12,7 @@ void clearBuffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-// Kiểm tra x[] có cách đều không
+// Hàm kiểm tra x có cách đều không
 int kiemTraCachDeu() {
     double d = x[1] - x[0];
     for (int i = 2; i < n; i++) {
@@ -22,7 +22,7 @@ int kiemTraCachDeu() {
     return 1;
 }
 
-// Kiểm tra x[] có bị trùng không
+// Hàm kiểm tra x có bị trùng không
 int kiemTraTrung() {
     for (int i = 0; i < n - 1; i++)
         for (int j = i + 1; j < n; j++)
@@ -78,7 +78,7 @@ while (1) {
     }
 }
 
-    // Kiểm tra x[] không trùng
+    // Gọi hàm kiểm tra trùng
     while (kiemTraTrung()) {
         printf("\nCac gia tri x khong duoc trung nhau. Xin nhap lai tu dau:\n");
         for (int i = 0; i < n; i++) {
@@ -89,7 +89,7 @@ while (1) {
         }
     }
 
-    // Kiểm tra x[] cách đều
+    // Gọi hàm kiểm tra cách đều
     while (!kiemTraCachDeu()) {
         printf("\nCac gia tri x phai cach deu nhau. Xin nhap lai tu dau:\n");
         for (int i = 0; i < n; i++) {

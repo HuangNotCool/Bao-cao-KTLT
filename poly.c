@@ -9,10 +9,10 @@
 #define LOG_FILE "nhatkyhethong.txt"
 #define OUTPUT_FILE "output.txt"
 
-double ytable_local[MAX][MAX];  // Sao lưu y để dùng riêng
-double heSoChinhTac[MAX];       // Hệ số dạng chính tắc a₀, a₁, a₂,...
+double ytable_local[MAX][MAX]; 
+double heSoChinhTac[MAX];       // Hệ số dạng chính tắc
 
-// Khởi tạo đa thức chính tắc rỗng
+// Khởi tạo đa thức chính tắc
 void khoiTaoDaThuc() {
     for (int i = 0; i < MAX_BAC; i++)
         heSoChinhTac[i] = 0;
@@ -32,7 +32,7 @@ void congDaThuc(double ketqua[], double tam[], double heSo) {
 }
 
 
-// Lấy hệ số tiến/lùi
+// Lấy hệ số tiến và lùi
 void layHeSoTien(double heso[]) {
     for (int i = 0; i < n; i++)
         heso[i] = ytable_local[0][i];
@@ -115,7 +115,7 @@ void inCongThuc(double heso[], int isTien, FILE* fout) {
     printf("\n"); fprintf(fout, "\n");
 }
 
-// Giao diện in da thức
+// Giao diện menu phụ chức năng 2
 void inDaThucNewton() {
     int chon;
     FILE* fout = fopen(OUTPUT_FILE, "a");
@@ -149,7 +149,7 @@ void inDaThucNewton() {
                 inCongThuc(heso_lui, 0, fout);
             }
 
-            taoDaThucChinhTac(heso_tien, 1); // Luon dung tien de tao chinh tac
+            taoDaThucChinhTac(heso_tien, 1);
             inDaThucRa(fout);
             fprintf(flog, "[Log] Ket thuc chuc nang in da thuc\n\n");
         } else if (temp == 0) break;

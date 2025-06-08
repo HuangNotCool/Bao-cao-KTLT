@@ -9,7 +9,7 @@
 
 double ytable_local[MAX][MAX];
 
-// Tính sai phân tiến & lùi riêng để dùng trong module này
+// Tính sai phân tiến & lùi
 void tinhSaiPhanLocal() {
     for (int i = 0; i < n; i++)
         ytable_local[i][0] = y[i];

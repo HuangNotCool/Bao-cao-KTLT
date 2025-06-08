@@ -6,7 +6,7 @@
 
 #define LOG_FILE "nhatkyhethong.txt"
 
-int resetFlag = 0;  // Biến toàn cục đánh dấu có reset không
+int resetFlag = 0; 
 
 void resetDuLieu() {
     // Ghi nhật ký trước khi xóa
@@ -42,7 +42,7 @@ void hienThiNhatKy() {
         return;
     }
 
-    printf("\n📄 Nhat ky he thong:\n");
+    printf("\n Nhat ky he thong:\n");
     printf("--------------------------------\n");
 
     char line[256];
@@ -82,13 +82,13 @@ void quanLyHeThong() {
 
         if (success == 1 && temp >= 0 && temp <= 2) {
             chon = temp;
-            break;  // ra khỏi vòng lặp và xử lý bên ngoài
+            break;
         } else {
             printf(" Lua chon khong hop le. Xin nhap lai.\n");
         }
     }
 
-    // Xử lý chức năng sau khi đã có lựa chọn hợp lệ
+    // Lựa chọn từ menu
     switch (chon) {
         case 1:
             resetDuLieu();

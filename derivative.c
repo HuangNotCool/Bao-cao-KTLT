@@ -9,7 +9,7 @@
 #define LOG_FILE "nhatkyhethong.txt"
 #define OUTPUT_FILE "output.txt"
 
-extern double heSoChinhTac[MAX];  // Được tạo trong poly.c
+extern double heSoChinhTac[MAX]; 
 
 
 // Tính đạo hàm của đa thức chính tắc tại x0
@@ -52,7 +52,7 @@ void daoHamTaiMotDiem() {
 
     char extra;
     if (sscanf(buffer, "%lf %c", &x0, &extra) == 1) {
-        break;  // nhập đúng 1 số double, không dư gì → OK
+        break; 
     } else {
         printf("Lua chon khong hop le. Xin nhap lai.\n");
     }
@@ -142,12 +142,12 @@ void daoHamTaiCacMoc() {
         double dydx = 0;
         int tinhduoc = 1;
 
-        if (chon == 1) { // Tiến
+        if (chon == 1) { // Cận trái
             if (i + 1 < n)
                 dydx = (y[i + 1] - y[i]) / h;
             else
                 tinhduoc = 0;
-        } else if (chon == 2) { // Lùi
+        } else if (chon == 2) { // Cận phải
             if (i - 1 >= 0)
                 dydx = (y[i] - y[i - 1]) / h;
             else
