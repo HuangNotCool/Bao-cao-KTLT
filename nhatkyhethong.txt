@@ -1,0 +1,23 @@
+[Log] Thuc hien chuc nang 1: In bang sai phan
+[Log] Ket thuc bang sai phan.
+
+[Log] In da thuc Newton tien
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] In da thuc Newton lui
+[Log] Ket thuc chuc nang in da thuc
+
+[Log] Tinh gia tri tai x = 2.40000 bang so do HOOCNE (tien)
+[Log] Da thuc hien tinh P(2.40000) = 3.400
+
+[Log] Tinh dao ham tai x = 2.400, Ket qua: 2.000
+
+[Log] Gan dung dao ham tai cac moc, loai 1
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 2
+[Log] Tinh dao ham tai 2 diem thanh cong.
+
+[Log] Gan dung dao ham tai cac moc, loai 3
+[Log] Tinh dao ham tai 1 diem thanh cong.
+
